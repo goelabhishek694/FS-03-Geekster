@@ -40,6 +40,10 @@ console.log(e);
   console.log(e.keyCode);
 }
 
+
+// console.log(document);
+// console.log(window.document.childNodes);
+
 //keyboard event -> real life use case 
 
 
