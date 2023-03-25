@@ -57,6 +57,26 @@ function removeClass() {
 
 }
 
+//mouse events
+
+//onmousenter
+function enlargeImage(){
+    const imageEle = document.querySelector("#cuteCat");
+    imageEle.style.height="400px";
+    imageEle.style.width="800px";
+}
+
+function reduceImage(){
+    const imageEle = document.querySelector("#cuteCat");
+    imageEle.style.height = "100px";
+    imageEle.style.width = "100px";
+}
+
+function showButton() {
+    const button=document.querySelector(".b3");
+    button.style.opacity="100";
+}
+
 
 
 

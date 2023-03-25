@@ -13,6 +13,13 @@
         .head1{
             font-style: italic;
         }
+        .b3{
+            opacity: 0;
+            border-radius: 20%;
+            border-color: pink;
+            background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+            padding: 50px;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +38,10 @@
         <p class="example2" >I am good</p>
     </div>
     <button class="button2" onclick="myFunction()">Click me </button>
+
+    <div><img id="cuteCat" src="https://hips.hearstapps.com/hmg-prod/images/cute-cat-photos-1593441022.jpg?crop=1.00xw:0.753xh;0,0.153xh&resize=1200:*" style="height: 100px;width: 100px;" alt="cute Cat" srcset="" onmouseenter="enlargeImage()" onmouseleave="reduceImage()"></div>
+
+    <button class="b3" onmouseover="showButton()">Magical Button</button>
     <script src="./dom.js"></script>
 </body>
 </html>
