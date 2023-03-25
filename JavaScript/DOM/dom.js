@@ -78,13 +78,3 @@ function showButton() {
 }
 
 
-
-
-
-
-
-
-
-
-//onmouseneter nmouseleave
-//how webpage renders
