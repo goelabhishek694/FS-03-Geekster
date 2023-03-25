@@ -23,8 +23,17 @@ console.log(elements);
 const b2 = document.getElementsByClassName("button2");
 
 function myFunction() {
-    const headingEle = document.querySelector(".example");
-    headingEle.innerHTML="Bye World"
+  const headingEle = document.querySelector(".example1");
+  console.log(headingEle.innerHTML);
+  console.log(headingEle.innerText);
+  console.log(headingEle.textContent);
+  headingEle.innerHTML = "Bye World";
+  const paraEle = document.querySelector(".example2");
+  // paraEle.innerText="i am bad"
+  // paraEle.textContent="i am bad"
+  //it is adding inline style to html ele, style properties will be written in camelCasing
+  paraEle.style.color = "red";
+  paraEle.style.backgroundColor = "black";
 }
 
 const b1 = document.getElementById("b1");
@@ -48,6 +57,14 @@ function removeClass() {
 
 }
 
+
+
+
+
+
+
+
+
+
 //onmouseneter nmouseleave
-//innertext inner html
 //how webpage renders
