@@ -28,16 +28,26 @@ function myFunction() {
 }
 
 const b1 = document.getElementById("b1");
-function changeColour() {
+function addClass() {
     const h1 = document.querySelector(".head1");
     const h3 = document.querySelector(".head3");
 
-    h1.setAttribute("class", "name");
-    h3.setAttribute("class", "name");
-}
-// addClassList
-//removeclasslist
-//how webpage renders
-//onmouseneter nmouseleave
+    h1.classList.add("name");
+    h3.classList.add("name");
+    // h1.setAttribute("class", "name");
+    // h3.setAttribute("class", "name");
 
+}
+
+function removeClass() {
+    const h1 = document.querySelector(".head1");
+    const h3 = document.querySelector(".head3");
+
+    h1.classList.remove("name");
+    h3.classList.remove("name");
+
+}
+
+//onmouseneter nmouseleave
 //innertext inner html
+//how webpage renders
