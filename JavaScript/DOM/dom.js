@@ -1,22 +1,22 @@
 const h1 = document.getElementsByClassName("greet");
-console.log(h1);
+//console.log(h1);
 
 const button = document.getElementById("b1");
-console.log(button);
+//console.log(button);
 
 //query selector 
 
 var ele = document.querySelector("h3");
-console.log(ele.innerHTML);
+//console.log(ele.innerHTML);
 
 var ele = document.querySelector("div>.head2");
-console.log(ele.innerHTML);
+//console.log(ele.innerHTML);
 
 var ele = document.querySelector("#head2");
-console.log(ele.innerHTML);
+//console.log(ele.innerHTML);
 
 var elements = document.querySelectorAll(".head2")
-console.log(elements);
+//console.log(elements);
 
 //change via dom 
 
@@ -24,9 +24,9 @@ const b2 = document.getElementsByClassName("button2");
 
 function myFunction() {
   const headingEle = document.querySelector(".example1");
-  console.log(headingEle.innerHTML);
-  console.log(headingEle.innerText);
-  console.log(headingEle.textContent);
+  //console.log(headingEle.innerHTML);
+  //console.log(headingEle.innerText);
+  //console.log(headingEle.textContent);
   headingEle.innerHTML = "Bye World";
   const paraEle = document.querySelector(".example2");
   // paraEle.innerText="i am bad"
@@ -77,4 +77,38 @@ function showButton() {
     button.style.opacity="100";
 }
 
+//create ele using js 
+const myDiv = document.createElement("div");
+console.log(myDiv);
+myDiv.className = "myDiv";
+myDiv.innerHTML = "<h1>Learning DOM</h1>";
+myDiv.id = "b23";
 
+//i need to place my element inside DOM tree
+console.log("Adding mydiv");
+document.body.append(myDiv);
+//this method can only be used if ele is present inside tree
+myDiv.classList.add("hello");
+
+//remove element
+console.log("Removing mydiv");
+function removeElement() {
+    myDiv.remove();
+}
+
+
+//create textNode using js
+const tn = document.createTextNode("Hello Geeksters!");
+console.log(tn);
+
+const button456 = document.querySelector(".b3");
+//the function which will be called, time after which fn will be called
+setTimeout(cb, 10000);
+function cb() {
+    button456.remove();
+}
+
+//add my elemnt at a particular location in dom. 
+const greetDiv = document.querySelector(".greet");
+greetDiv.append(myDiv);
+greetDiv.appendChild(myDiv);
