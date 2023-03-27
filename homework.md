@@ -8,6 +8,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 https://flukeout.github.io/
 
-flexbox froggy 
+flexbox froggy
 
 css grid garden
+
+27/03/23
+
+find method which can be used to add ele in dom in begingin, after and before an element.
