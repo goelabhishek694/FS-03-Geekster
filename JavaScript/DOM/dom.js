@@ -110,5 +110,40 @@ function cb() {
 
 //add my elemnt at a particular location in dom. 
 const greetDiv = document.querySelector(".greet");
-greetDiv.append(myDiv);
-greetDiv.appendChild(myDiv);
+var a=greetDiv.append(myDiv);
+var b=greetDiv.appendChild(myDiv);
+
+// console.log(a);
+// console.log(b);
+
+// HTMLCollection vs NodeList
+
+//traversing parent node
+var a=greetDiv.parentElement
+var b = greetDiv.parentNode
+console.log(a);
+console.log(b);
+
+//traversing on children
+var a = greetDiv.childNodes;
+console.log(a); 
+//[text, h2#head2, text, h2.head2, text, h2.head2, text, div#b23.myDiv.hello]
+//this text represents a line break
+
+
+var a = greetDiv.children
+console.log(a);
+
+//traversing on sibling
+var a = greetDiv.nextSibling;
+console.log(a); 
+
+var a = greetDiv.nextElementSibling;
+console.log(a); 
+
+var a = greetDiv.previousElementSibling;
+console.log(a); 
+
+//cloning a node
+var a = greetDiv.cloneNode(true);
+console.log(a); 
