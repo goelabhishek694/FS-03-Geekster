@@ -147,3 +147,39 @@ console.log(a);
 //cloning a node
 var a = greetDiv.cloneNode(true);
 console.log(a); 
+
+// window.onload = function () {
+//     // alert("Displayed as soon as wesbite is loaded")
+//     const spinDiv = document.querySelector("#main");
+//     spinDiv.innerHTML=`<div id="wheel" class="wheel">
+//                <div>
+//                     <span class="span1"><p>😊</p></span>
+//                     <span class="span2"><p>😝</p></span>
+//                     <span class="span3"><p>😍</p></span>
+//                     <span class="span4"><p>😎</p></span>
+              
+//                     <span class="span5"><p>🍩</p></span>
+//                     <span class="span6"><p>🍭</p></span>
+//                     <span class="span7"><p>🍰</p></span>
+//                     <span class="span8"><p>🍬</p></span>
+//               </div>
+//          </div>`
+// }
+// const spinBtn = document.getElementsByClassName("spin");
+// spinBtn.addEventListener("click", letsSpin);
+// function letsSpin() {
+//   var x = 1024; //min value
+//   var y = 9999; //max value
+
+//   var deg = Math.floor(Math.random() * (x - y)) + y;
+
+//   document.getElementById("wheel").style.transform = "rotate(" + deg + "deg)";
+// }
+
+// hw keep fn diferent , click event from dom and html. 
+
+const spinBtn = document.querySelector(".spin");
+spinBtn.addEventListener("click", (e) => {
+    console.log(e);
+});
+console.log(spinBtn);

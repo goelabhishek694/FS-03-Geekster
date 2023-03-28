@@ -1,35 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .name{
+        .name {
             background-color: green;
         }
 
-        .head1{
+        .head1 {
             font-style: italic;
         }
-        .b3{
+
+        .b3 {
             opacity: 0;
             border-radius: 20%;
             border-color: pink;
             background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
             padding: 50px;
         }
-        .myDiv{
+
+        .myDiv {
             height: 100px;
             background-color: lightcoral;
         }
-        .greet{
+
+        .greet {
             height: 150px;
             background-color: rgb(57, 9, 9);
         }
+
+        /* spinnig wheel css */
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none; */
+        /* }
+
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: #ffe605;
+            background-size: cover;
+        }
+
+        .main {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            overflow: hidden;
+            transition: all ease 4s;
+        }
+
+        span {
+            width: 50%;
+            height: 50%;
+            display: inline-block;
+            position: absolute;
+        }
+
+        .span1 {
+            clip-path: polygon(0 92%, 100% 50%, 0 8%);
+            background-color: #ff1f1f;
+            top: 120px;
+            left: 0;
+        }
+
+        .span2 {
+            clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+            background-color: #19e3cf;
+            top: 120px;
+            right: 0;
+        }
+
+        .span3 {
+            clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+            background-color: #9e0bf3;
+            bottom: 0;
+            left: 120px;
+        }
+
+        .span4 {
+            clip-path: polygon(50% 100%, 92% 0, 8% 0);
+            background-color: #15b600;
+            top: 0;
+            left: 120px;
+        }
+
+        .span5 {
+            clip-path: polygon(0 40%, 100% 0%, 60% 100%);
+            background-color: #1f26ff;
+            bottom: -2px;
+            right: 242px;
+        }
+
+        .span6 {
+            clip-path: polygon(40% 100%, 0 0%, 100% 40%);
+            background-color: #ff5a5a;
+            bottom: -2px;
+            left: 242px;
+        }
+
+        .span7 {
+            clip-path: polygon(60% 0, 100% 100%, 0 60%);
+            background-color: #57fff1;
+            top: -2px;
+            right: 242px;
+        }
+
+        .span8 {
+            clip-path: polygon(0 100%, 100% 60%, 40% 0);
+            background-color: #ff9612;
+            top: -2px;
+            left: 242px;
+        }
+
+        span p {
+            width: 65px;
+            height: 65px;
+            font-size: 60px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .spin {
+            position: absolute;
+            top: 43%;
+            left: 43%;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: black;
+            color: #fff;
+            box-shadow: 0 5px 20px #000;
+            font-weight: bold;
+            font-size: 22px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                transform: scale3d(1.09, 1.09, 1.09);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .spin:active {
+            width: 70px;
+            height: 70px;
+            font-size: 20px;
+            background: #ffe605;
+        } */
     </style>
 </head>
+
 <body>
     <h1 class="head1 head5" style="font-style: normal;">Hello FS-03 !</h1>
     <h3 class="head3">Geekster</h3>
@@ -42,15 +194,26 @@
     </div>
 
     <div id="myid">
-        <h1 class="example1">Hello      <span>World</span></h1>
-        <p class="example2" >I am good</p>
+        <h1 class="example1">Hello <span>World</span></h1>
+        <p class="example2">I am good</p>
     </div>
     <button class="button2" onclick="myFunction()">Click me </button>
 
-    <div><img id="cuteCat" src="https://hips.hearstapps.com/hmg-prod/images/cute-cat-photos-1593441022.jpg?crop=1.00xw:0.753xh;0,0.153xh&resize=1200:*" style="height: 100px;width: 100px;" alt="cute Cat" srcset="" onmouseenter="enlargeImage()" onmouseleave="reduceImage()"></div>
+    <div><img id="cuteCat"
+            src="https://hips.hearstapps.com/hmg-prod/images/cute-cat-photos-1593441022.jpg?crop=1.00xw:0.753xh;0,0.153xh&resize=1200:*"
+            style="height: 100px;width: 100px;" alt="cute Cat" srcset="" onmouseenter="enlargeImage()"
+            onmouseleave="reduceImage()"></div>
 
     <button class="b3" onmouseover="showButton()">Magical Button</button>
     <button onclick="removeElement()">Click to remove</button>
+    <div id="main" class="main"></div>
+    <button class="spin">SPIN</button>
     <script src="./dom.js"></script>
+
+        
+
+
+
 </body>
+
 </html>
