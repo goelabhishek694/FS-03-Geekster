@@ -15,3 +15,9 @@ css grid garden
 27/03/23
 
 find method which can be used to add ele in dom in begingin, after and before an element.
+
+28/03/23
+
+https://www.w3schools.com/jsref/event_onmousedown.asp
+
+https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
