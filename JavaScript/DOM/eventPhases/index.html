@@ -5,13 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .parent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:200px;
+            width:500px;
+            background-color: lightgray;
+        }
+
+        .child{
+            height:100px;
+            width:200px;
+            background-color: rgb(129, 36, 36);
+        }
+    </style>
 </head>
 <body>
-    <form>Form
+    <!-- <form>Form
         <div>Div
             <p>Paragraph</p>
         </div>
-    </form>
+    </form> -->
+    <div class="parent">
+        <div class="child"></div>
+        <!-- <button class="child">Will I Bubble ?</button> -->
+    </div>
     <script src="./index.js"></script>
 </body>
 </html>
