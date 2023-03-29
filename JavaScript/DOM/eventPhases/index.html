@@ -20,6 +20,36 @@
             width:200px;
             background-color: rgb(129, 36, 36);
         }
+        body{
+            margin:0 auto;
+            max-width: 400px;
+            width:100%;
+        }
+        .title{
+            border: 5px solid rgb(59, 58, 58);
+            padding:5px;
+            text-align: center;
+        }
+        .list{
+            border:5px solid lightgray;
+            box-shadow: 1px 3px 8px rgb(85,85,85);
+            cursor:pointer;
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        .item{
+            padding:10px 15px;
+            background: darkgray;
+        }
+        .item:hover{
+                /* background: dark; */
+                filter: brightness(60%);
+            }
+        .bought{
+            text-decoration: line-through;
+        }
+
     </style>
 </head>
 <body>
@@ -28,10 +58,20 @@
             <p>Paragraph</p>
         </div>
     </form> -->
-    <div class="parent">
+    <!-- <div class="parent">
         <div class="child"></div>
-        <!-- <button class="child">Will I Bubble ?</button> -->
-    </div>
+        <button class="child">Will I Bubble ?</button>
+    </div> -->
+
+
+    <h1 class="title">My Shopping List</h1>
+    <ul class="list">
+        <li class="item">Play Station 5</li>
+        <li class="item">Macbook Pro</li>
+        <li class="item">Iphone</li>
+        <li class="item">Odomos</li>
+        <li class="item">Rolex</li>
+    </ul>
     <script src="./index.js"></script>
 </body>
 </html>
