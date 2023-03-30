@@ -44,6 +44,19 @@ asyncFunction1(
 
 //promises 
 
+//creating a promise
+                                     //executor
+let companyStatusPromise=new Promise(function(resolve,reject){
+  //contains api call->result
+  // resolve,reject -> cb functions
+  // either of resolve() or reject() is called
+  //resolve(value)-> if job is finished succesfully with result "value"
+  //reject(error) -> if an error occurs
+})
+//when new Promise is created , executor is called automatically
+
+
+
 
 
 
