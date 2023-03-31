@@ -94,6 +94,32 @@ isEvenPromise.then(
 ).catch(err => console.log(err));
 
 
+function delay(ms) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(()=>resolve(),ms)
+  })
+}
+
+delay(3000).then(() => console.log("delayed for 3 seconds"));
+
+function getData() {
+  return new Promise((resolve, reject)=>{
+    setTimeout(() => {
+      const data = [10, 20, 30, 40, 50];
+      resolve(data);
+    }, 5000);
+  })
+}
+
+getData().then(cb);
+
+function cb(arr) {
+  console.log(arr);
+}
+
+
+
+
 
 
 
