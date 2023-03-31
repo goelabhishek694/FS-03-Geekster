@@ -117,6 +117,30 @@ function cb(arr) {
   console.log(arr);
 }
 
+//instantly resolved promises
+new Promise((resolve, reject) => {
+  // if(data)
+  resolve("hello");
+  //server call to get data 
+}).then((x) => console.log(x)).catch((e) => console.log(e));
+
+new Promise((resolve, reject) => {
+  setTimeout(() => resolve(100), 2000);
+})
+  .then((res) => {
+    return res * 2;
+  })
+  .then((res) => {
+    return res * 2;
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch(err => console.log(err))
+  
+
+
+
 
 
 
