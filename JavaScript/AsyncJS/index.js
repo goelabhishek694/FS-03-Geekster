@@ -137,6 +137,27 @@ new Promise((resolve, reject) => {
     console.log(res);
   })
   .catch(err => console.log(err))
+
+let p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(100), 2000);
+})
+  
+p.then(res => {
+  console.log(res);
+  return res * 2
+});
+
+p.then(res => {
+  console.log(res);
+  return res * 2
+});
+
+p.then((res) => {
+  console.log(res);
+  return res * 2;
+});
+
+
   
 
 
