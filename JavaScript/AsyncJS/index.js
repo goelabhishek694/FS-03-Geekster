@@ -1,3 +1,5 @@
+const API_KEY = require('../../secrets');
+console.log(API_KEY);
 // console.log(10);
 // console.log(100);
 // setTimeout(() => console.log("200"), 3000);
@@ -124,38 +126,83 @@ new Promise((resolve, reject) => {
   //server call to get data 
 }).then((x) => console.log(x)).catch((e) => console.log(e));
 
+// new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(100), 2000);
+// })
+//   .then((res) => {
+//     return res * 2;
+//   })
+//   .then((res) => {
+//     return res * 2;
+//   })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch(err => console.log(err))
+
+// let p = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(100), 2000);
+// })
+  
+// p.then(res => {
+//   console.log(res);
+//   return res * 2
+// });
+
+// p.then(res => {
+//   console.log(res);
+//   return res * 2
+// });
+
+// p.then((res) => {
+//   console.log(res);
+//   return res * 2;
+// });
+
+//returning a promise from then handler. 
 new Promise((resolve, reject) => {
   setTimeout(() => resolve(100), 2000);
 })
   .then((res) => {
-    return res * 2;
-  })
-  .then((res) => {
-    return res * 2;
+    console.log(res);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve(res * 2), 1000);
+    });
   })
   .then((res) => {
     console.log(res);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve(res * 2), 1000);
+    });
   })
-  .catch(err => console.log(err))
+  .then((res) => {
+    console.log(res);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve(res * 2), 1000);
+    });
+  })
+  .then((res) => {
+    console.log(res);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve(res * 2), 1000);
+    });
+  });
 
-let p = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(100), 2000);
-})
-  
-p.then(res => {
-  console.log(res);
-  return res * 2
-});
+//fetch
+// promises used for network requests -> fetch
+let lat = '25.3176';
+let lon = '82.9739';
+let url = `https://api.openweathermap.org/data/2.5/weather?lat=25.3176&lon=82.9739&units=metric&appid=`;
 
-p.then(res => {
-  console.log(res);
-  return res * 2
-});
+let weatherPromise = fetch(url);
+weatherPromise
+  .then((res) => {
+    console.log(res)
+    return res.json();
+  })
+  .then((data)=>console.log(data))
+  .catch((err) => console.log(err))
 
-p.then((res) => {
-  console.log(res);
-  return res * 2;
-});
 
 
   
