@@ -266,18 +266,34 @@ githubUserPromise
 
 // Promise.any 
 //return first fuflfilled promise
-let p1 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(100), 10000);
-});
-let p2 = new Promise((resolve, reject) => {
-  setTimeout(() => reject(new Error("promise rejected")), 1000);
-});
-let p3 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(300), 3000);
-});
-let racePromise = Promise.race([p1, p2, p3]); 
-racePromise.then((data) => console.log(data)).catch((err) => console.log(err));
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(100), 10000);
+// });
+// let p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => reject(new Error("promise rejected")), 1000);
+// });
+// let p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(300), 3000);
+// });
+// let racePromise = Promise.race([p1, p2, p3]); 
+// racePromise.then((data) => console.log(data)).catch((err) => console.log(err));
   
+
+
+let userNames = ["goelabhishek694", "vishnupumar","smulla786"];
+let allGithubUsersRequest = userNames.map(username => fetch(`https://api.github.com/users/${username}`))
+console.log(allGithubUsersRequest)
+Promise.all(allGithubUsersRequest)
+  .then((responseObjectArr) => {
+    console.log(responseObjectArr);
+    let userDataArr = responseObjectArr.map((resObj) => resObj.json());
+    console.log(userDataArr);
+    return Promise.all(userDataArr);
+  })
+  .then((userDataArr) => userDataArr.forEach((user) => console.log(user)));
+  //display profile picture instead of printing object 
+
+
 
 
 
