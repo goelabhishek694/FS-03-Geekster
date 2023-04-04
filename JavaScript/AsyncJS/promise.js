@@ -341,14 +341,6 @@ Promise.allSettled(allGithubUsersRequest)
   .catch((err) => console.log(err));
 
 
-  //<----------------Async/await---------------->
-
-async function foo() {
-    return 'Hello Geeksters'
-}
-
-foo().then(data => console.log(data));
-
 
 
 
