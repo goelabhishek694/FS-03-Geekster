@@ -51,31 +51,47 @@
 
 
 async function getGithubAvatar() {
-    let githubUserRequest =  await fetch(`https://api.github.com/users/goelabhishek694`);
-    let data = await githubUserRequest.json();
-    const img = document.createElement("img");
-    img.src = data.avatar_url;
-    img.style.height = "300px";
-    img.style.width = "300px";
-    img.style.borderRadius = "50%";
-    document.body.append(img);
-    await new Promise((resolve, reject) => {
-        return setTimeout(resolve, 3000);
-    });
-    img.remove();
-    console.log("dp removed");
-    return data
+    try{
+        let githubUserRequest =  await fetch(`https://api.github.com/users/goelabhishek694`);
+        let data = await githubUserRequest.json();
+        const img = document.createElement("img");
+        img.src = data.avatar_url;
+        img.style.height = "300px";
+        img.style.width = "300px";
+        img.style.borderRadius = "50%";
+        document.body.append(img);
+        await new Promise((resolve, reject) => {
+            return setTimeout(resolve, 3000);
+        });
+        img.remove();
+        console.log("dp removed");
+        return data
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 let ans = getGithubAvatar();
 console.log(ans);
 ans.then(data => console.log(data));
 
-// function fun1() {
-//     return
-// }
-// let ans = fun1();
-// console.log(ans);
+//error - handling 
+function fun() {
+    try {
+        console.log("hello in try");
+        throw new Error("data cannot be processed");
+        // console.log(data);
+    }
+    catch (err) {
+        console.log(err);
+    }
+    finally {
+        console.log("in finally");
+    }
+}
+
+fun()
 
 
 
