@@ -81,17 +81,19 @@ function fun() {
     try {
         console.log("hello in try");
         throw new Error("data cannot be processed");
-        // console.log(data);
+        // return {a:100}
     }
     catch (err) {
         console.log(err);
+        return {}
     }
     finally {
         console.log("in finally");
     }
 }
 
-fun()
+let obj = fun();
+console.log(obj);
 
 
 
