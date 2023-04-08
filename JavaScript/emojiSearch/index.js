@@ -11,7 +11,8 @@ function displayEmojis(emojiObj) {
     const ul = document.querySelector("#emoji-list");
     ul.innerHTML = '';
     Object.keys(emojiObj).forEach((emojiName) => {
-      const li = document.createElement("li");
+        const li = document.createElement("li");
+        li.classList='emoji'
       li.innerHTML = `${emojiObj[emojiName]}`;
       ul.appendChild(li);
     });
