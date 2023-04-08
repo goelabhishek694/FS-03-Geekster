@@ -27,3 +27,13 @@ ul{
     font-family: NotoColorEmoji;
     text-align: left;
 }
+
+.fade{
+    animation: fade 0.25s
+    /* background-color: black; */
+}
+
+@keyframes fade{
+    0% {opacity:0;}
+    100%{opacity:0;}
+}
