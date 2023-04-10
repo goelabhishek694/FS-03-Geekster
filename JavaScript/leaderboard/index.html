@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+        </table>
+    </div>
+    
+    <div id="add-player">
+        <h2>Add Player</h2>
+        <form>
+            <label for="player-name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="player-score">Score:</label>
+            <input type="number" id="player-score" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div id="player-list">
+        <ul id="list">
+            <li class="player-details"></li>
+        </ul>
+    </div>
+</body>
+</html>
