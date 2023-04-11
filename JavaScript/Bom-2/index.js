@@ -28,15 +28,12 @@ function cb(...data) {
     console.log(data);
 }
 
-document.querySelector(".btn").addEventListener("click",()=>{
-    setTimeout(() => console.log("alert"), 1000);
-})
 
 const alarm = {
   remind(aMessage) {
     alert(aMessage);
     this.timeoutID = undefined;
-  },
+},
 
   setup() {
     if (typeof this.timeoutID === "number") {
@@ -45,11 +42,11 @@ const alarm = {
     }
 
     this.timeoutID = setTimeout(
-      (msg) => {
+      (...msg) => {
         this.remind(msg);
       },
       1000,
-      "Wake up!"
+      "Wake up!","It is Morning","get ready"
     );
   },
 
@@ -57,5 +54,15 @@ const alarm = {
     clearTimeout(this.timeoutID);
   },
 };
-window.addEventListener("click", () => alarm.setup());
+// window.addEventListener("click", () => alarm.setup());
 
+let timer;
+document.querySelector(".start").addEventListener("click",()=>{
+    timer = setInterval(() => console.log("hello"), 1000);
+    console.log(timer);
+})
+
+document.querySelector(".stop").addEventListener("click",()=>{
+    console.log(timer);
+    clearInterval(timer);
+})
