@@ -1,4 +1,3 @@
-"use strict"
 //lexical env, scope chaining example
 // function a() {
 //     c();
@@ -285,5 +284,4 @@ let group = {
 };
 
 group.list();
-
 
