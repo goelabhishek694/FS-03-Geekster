@@ -1,3 +1,4 @@
+"use strict"
 //lexical env, scope chaining example
 // function a() {
 //     c();
@@ -117,9 +118,8 @@
 //   close(i);
 // }
 
-
 //<------this------>
- 
+
 let user1 = {
   name: "Aman",
   age: 25,
@@ -141,8 +141,8 @@ let user2 = {
 // user2.greet();
 //this keyword is not permanently pointing to user object
 
-// this keyword is going to point to the object from where the function has invoked i.e. via which obj the function was invoked. 
-// or this points 
+// this keyword is going to point to the object from where the function has invoked i.e. via which obj the function was invoked.
+// or this points
 
 // 1st ques-> this instead of obj name ?
 
@@ -155,38 +155,135 @@ let user2 = {
 // user3.greet();
 
 // <------golden rules------>
-// 1. the value of "this" is evaluated during run time 
+// 1. the value of "this" is evaluated during run time
 // 2. value of "this" depends from where it is called
 // 3. "this" points to that object from where the function is being called
-// 4. arr,obj,fn are all passed by reference  
+// 4. arr,obj,fn are all passed by reference
 
-//benefit of using this 
-let admin={name1:"Abhishek"}
-let user={name1:"Ankit"}
+// this-> to obj before dot
 
-function meet(){
-    console.log(`hello ${this.name1}`);
+//benefit of using this
+// let admin={name1:"Abhishek"}
+// let user={name1:"Ankit"}
+
+// function meet(){
+//     console.log(`hello ${this.name1}`);
+// }
+
+// admin.fn=meet;
+// user.fn=meet;
+
+// // admin.fn();
+// // user.fn();
+
+// let foo1=admin.fn;
+// let foo2=user.fn;
+
+// foo1()
+// foo2()
+
+//1
+
+function type1() {
+  console.log(`I Love ${this.name}`);
+}
+var name = "JavaScript";
+
+type1(); // when fn is called globally, "this" always points to window obj
+
+function type2() {
+  console.log(this.fname);
 }
 
-admin.fn=meet;
-user.fn=meet;
+var fname = "Abhishek";
+var obj = {
+  fname: "Ankit",
+  type2: function () {
+    console.log(this.fname);
+  },
+};
 
-// admin.fn();
-// user.fn();
+obj.type2(); // "this" points to obj because type2 fn has been called by obj
 
-let foo1=admin.fn;
-let foo2=user.fn;
+//3
+var food = "Pizza";
+var obj = {
+  food: "pasta",
+  eat: function () {
+    console.log(`i like to eat ${this.food}`);
+  },
+};
 
-foo1()
-foo2()
+var foo = obj.eat;
+foo();
 
+//4
+let length = 1;
+function square() {
+  let cb = function () {
+    console.log(this.length * this.length);
+  };
+  setTimeout(cb, 2000);
+}
 
+var obj = {
+  length: 3,
+  square,
+};
 
+obj.square();
 
+//5
+function Name(fName, lName) {
+  this.firstName = fName;
+  this.lastName = lName;
+}
+var obj = new Name("Rohit", "Sharma");
+console.log(obj);
+//js creates a new obj "{}"
+//js passes the object's reference to the fn
+//this-> "{}"
 
+let food1 = {
+  continent: "Italy",
+  name2: "Pizza",
+  say() {
+    console.log(this); //food1
+    let favFood = function () {
+      console.log(this.name2);
+    };
+    favFood(); //this->window
+  },
+};
 
+food1.say();
 
+//arrow function do not have "this" keyword, so they refer the "this" keyword of their outer function
+let food2 = {
+  continent: "Italy",
+  name2: "Pizza",
+  say() {
+    console.log(this); //food2
+    let favFood = () => {
+      console.log(this.name2);
+    };
+    favFood();
+  },
+};
 
+food2.say();
 
+let group = {
+  title: "picnic",
+  students: ["Krishna", "Abhishek", "Mayank"],
+  list() {
+    //this->group
+    this.students.forEach(function (student) {
+      console.log(`${student} is going on a ${this.title}`);
+    });
+  },
+};
+
+group.list();
 
 
