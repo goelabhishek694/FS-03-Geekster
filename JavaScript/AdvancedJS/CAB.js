@@ -52,7 +52,42 @@ welcomeSachin(); //-> welcome fn is called
 welcomeSachin.call(player3); //no effect
 welcomeSachin.bind(player3); // no effect 
 
-//polyfills
+//polyfill for bind
+
+let car={
+    name:"Thar",
+    brand:"Mahindra"
+}
+
+let carDescription=function(){
+    console.log(`I bought a new ${this.brand} ${this.name}`);
+}
+
+//assume i do not have a bind function 
+// var bindedFn=carDescription.bind(car);
+
+// prototype is an obj which contains methods and properties 
+
+
+Function.prototype.myBind=function(arg){
+  let fn = this; //carDescription
+  return function () {
+    fn.call(arg);
+  };
+};
+
+
+
+var bindedFn=carDescription.myBind(car);
+console.log(bindedFn);
+bindedFn();
+
+
+
+
+
+
+
 
 
 
