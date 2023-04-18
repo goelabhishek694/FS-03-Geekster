@@ -84,6 +84,110 @@ bindedFn();
 
 
 
+//obj destructuring
+let obj = {
+    name: "Abhishek",
+    profession: "Engineer",
+    age: 24,
+    hobby:"music"
+}
+
+var { age, name } = obj;
+console.log(name);
+console.log(age);
+
+
+//array destructuring 
+let person = ["Abhishek", "Engineer", 24, "music"];
+var [name,,,hobby] = person;
+console.log(name);
+console.log(hobby);
+
+
+//spread operator
+let fruits = ["Apple", "Mango", "Banana", "Grapes"];
+let allFruits = ["papaya", "kiwi", "pineapple", ...fruits];
+allFruits.tasty = true;
+console.log(allFruits);
+console.log(allFruits.tasty);
+console.log(allFruits["tasty"]);
+
+userProfile("Abhishek", "Engineer", 24, "music", "CSE", "MAIT");
+function userProfile(...args) { //rest
+    console.log(...args); //spread
+};
+
+//string destructuring
+let fullName = "Abhishek Goel";//["A", "b", "h", "i", "s","h","e","k"," ","G","o","e","l"]
+let [...firstLetter] = fullName;
+let [firstName] = fullName.split(" ");//["Abhishek","Goel"]
+console.log(firstLetter);
+console.log(firstName);
+
+// let arrow = (name) => {
+//     console.log("hello"+name);
+// };
+// arrow("Abhishek")
+// arrow()
+// arrow()
+// arrow()
+
+
+// normal/conventional functions
+function arrow() {
+  console.log("hello" + name);  
+}
+
+//function expression
+// let arrow = function () {
+//     console.log("hello" + name);
+// }
+
+// //arrow fn
+// let arrow = () => {
+//     console.log("hello" + name);
+// }
+
+// let arrow = (name) => {
+//   console.log("hello" + name);
+// };
+
+// let arrow = (name,age) => {
+//   console.log("hello" + name+age);
+// };
+
+// let arrow = name => {
+//   return ("hello" + name); //explicitly type return if curly braces present 
+// }; 
+
+// let arrow = (name) => console.log("hello" + name);
+
+// let arrow = name => "hello" + name; //returns whatever is there after arrow
+
+
+//diff b/w normal func & arrow fn 
+// 1) this
+// 2) hoisting
+
+//hoisting -> all the varibale and function declaration are moved to the top 
+
+console.log(a);
+var a = 10;
+console.log(a);
+
+hello();
+function hello() {
+    console.log("hi");
+}
+
+console.log(bye);
+var bye = () => {
+    console.log("byeeeee");
+}
+console.log(bye);
+bye();
+
+
 
 
 
