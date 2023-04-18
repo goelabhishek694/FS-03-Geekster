@@ -31,3 +31,9 @@ https://regex101.com/
 12/04/23
 
 [Object-Oriented Programming in JavaScript for Beginners![]()freeCodeCamphttps://www.freecodecamp.org **› news › object-oriente...**](https://www.freecodecamp.org/news/object-oriented-javascript-for-beginners/)
+
+18/04/2023
+
+https://javascript.info/destructuring-assignment
+
+https://www.frontendmentor.io/challenges
