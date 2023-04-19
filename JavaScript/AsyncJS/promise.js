@@ -1,5 +1,5 @@
-// import { API_KEY } from "../../secrets.mjs";
-// console.log(API_KEY);
+import { API_KEY } from "../../secrets.js";
+console.log(API_KEY);
 // console.log(10);
 // console.log(100);
 // setTimeout(() => console.log("200"), 3000);
@@ -192,7 +192,7 @@ new Promise((resolve, reject) => {
 // promises used for network requests -> fetch
 let lat = '25.3176';
 let lon = '82.9739';
-let url = `https://api.openweathermap.org/data/2.5/weather?lat=25.3176&lon=82.9739&units=metric&appid=d8ab14f7e93c56cbe84562d28e8202bd`;
+let url = `https://api.openweathermap.org/data/2.5/weather?lat=25.3176&lon=82.9739&units=metric&appid=${API_KEY}`;
 
 let weatherPromise = fetch(url);
 weatherPromise
