@@ -37,3 +37,9 @@ https://regex101.com/
 https://javascript.info/destructuring-assignment
 
 https://www.frontendmentor.io/challenges
+
+19/04/2023
+
+https://javascript.info/modules-intro
+
+https://dev.to/nehal_mahida/oops-in-javascript-with-easy-to-understand-examples-2ppn
