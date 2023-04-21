@@ -285,3 +285,20 @@ let group = {
 
 group.list();
 
+
+//optional chaining
+let obj = {
+  name:"Abhishek",
+  address: {
+    city: "Delhi",
+    houseNo: 123,
+    pincode: 110045,
+    street: {
+      s1: "north avenue",
+      s2:"north block"
+    }
+  }
+}
+
+console.log(obj.address.street.s3);
+console.log(obj?.address?.streets?.s2);
