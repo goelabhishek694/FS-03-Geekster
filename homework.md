@@ -43,3 +43,10 @@ https://www.frontendmentor.io/challenges
 https://javascript.info/modules-intro
 
 https://dev.to/nehal_mahida/oops-in-javascript-with-easy-to-understand-examples-2ppn
+
+
+20/4/23
+
+https://javascript.info/garbage-collection
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
