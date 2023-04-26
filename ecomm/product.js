@@ -8,7 +8,7 @@ async function getProduct() {
     }
 
     let productId = params.get('id');
-    let request = await fetch(`https://fakestoreapi.com/products/${productId}`);
+    let request = await fetch(`http://localhost:3000/products/${productId}`);
     let data = await request.json();
     renderProduct(data);
 

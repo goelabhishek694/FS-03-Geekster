@@ -15,3 +15,11 @@
     height: 400px;
     width: 400px;
 }
+
+.cred{
+    /* border: 2px black solid ; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

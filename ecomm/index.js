@@ -1,7 +1,7 @@
 async function getAllProducts() {
-    let req=await fetch("https://fakestoreapi.com/products")
+    let req = await fetch("http://localhost:3000/products");
     let data = await req.json();
-    console.log(data);
+    console.log(JSON.stringify(data));
     createCard(data);
 }
 
