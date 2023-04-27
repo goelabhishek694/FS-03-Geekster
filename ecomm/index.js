@@ -8,7 +8,7 @@ prevBtn.addEventListener("click", getPrevPage);
 nextBtn.addEventListener("click", getNextPage);
 
 let currPage = 1;
-let prodPerPage = 5;
+let prodPerPage = 6;
 let start = 1;
 let end = 5;
 
