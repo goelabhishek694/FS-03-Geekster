@@ -1,15 +1,15 @@
-
-
-
-let signIn = document.querySelector(".signin");
+let signIn = document.querySelector(".login");
 let email = document.querySelector("#inputEmail4");
 let password = document.querySelector("#inputPassword4");
 
-signIn.addEventListener('click', (e) => {
+signIn.addEventListener('submit', (e) => {
     e.preventDefault();
     let email = email.value;
     let password = email.password;
-    loginUser(email, password);
+    const formData = new FormData(e.target);
+    console.log(formData);
+    console.log(email,password);
+    // loginUser(email, password);
 })
 
 async function loginUser(e, p) {
