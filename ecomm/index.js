@@ -35,7 +35,7 @@ function createCard(dataObj) {
         <p class=" card-title card-text">${title.slice(0, 30) + "..."}</p>
             <img src=${image} "card-img-top" alt="...">
             <div class="card-body">
-                <a href="#" class="btn btn-primary">Add To Cart</a>
+                <button class="btn btn-primary atc" value=${id}>Add To Cart</button>
                 <a href="./product.html?id=${id}" class="btn btn-primary">View Product</a>
             </div>
         </div>`;
@@ -83,5 +83,17 @@ function sortHL() {
     data = data.sort((a, b) => b.price - a.price);
     console.log(data);
     createCard(filterData(start, end, data));
+}
+
+window.onload = () => {
+  const atc = document.querySelectorAll(".atc");
+  // console.log(atc);
+  atc.forEach((btn => btn.addEventListener("click", () => { sendData(btn.value) })
+  ));
+
+  function sendData(id) {
+    console.log(id);
+  }
+
 }
 
