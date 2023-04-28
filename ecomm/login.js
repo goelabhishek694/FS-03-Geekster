@@ -1,26 +1,31 @@
 let signIn = document.querySelector(".login");
-let email = document.querySelector("#inputEmail4");
-let password = document.querySelector("#inputPassword4");
 
-signIn.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let email = email.value;
-    let password = email.password;
-    const formData = new FormData(e.target);
-    console.log(formData);
-    console.log(email,password);
-    // loginUser(email, password);
-})
+signIn.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  console.log(username, password);
+  loginUser(username, password);
+});
 
-async function loginUser(e, p) {
-    let req=await fetch("https://fakestoreapi.com/auth/login", {
+//mor_2314
+//83r5^_
+async function loginUser(username, password) {
+  try {
+    let req = await fetch("https://fakestoreapi.com/auth/login", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        username: e,
-        password: p,
+        username,
+        password,
       }),
-    })
+    });
     let res = await req.json();
-    console.log(res)
+    console.log(res);
+    // if (res) alert("login successful");
+    if (res) location.href = 'index.html';
+    else alert("wrong credentials");
+  } catch (err) {
+    console.log("err-> ", err);
+  }
 }
-
