@@ -91,9 +91,44 @@ window.onload = () => {
   atc.forEach((btn => btn.addEventListener("click", () => { sendData(btn.value) })
   ));
 
-  function sendData(id) {
-    console.log(id);
+  async function sendData(id) {
+    try {
+      console.log(id);
+      //get data of that product
+      let req = await fetch(`http://localhost:3000/products/${id}`);
+      let res = await req.json();
+      console.log(res);
+      
+
+      let cartProductReq = await fetch(`http://localhost:3000/cart/${id}`);
+      let cartProductRes = await cartProductReq.json();
+      if (Object.keys(cartProductRes).length==0) {
+        res["quantity"] = 1;
+        saveinCartDB("POST",res,'http://localhost:3000/cart');
+      }
+      else {
+        cartProductRes["quantity"] += 1;
+        saveinCartDB("PUT", cartProductRes, `http://localhost:3000/cart/${id}`);
+      }
+      console.log(cartProductRes);
+    }
+
+    catch (err) {
+      console.log(err.message);
+    }
+  }
+
+  async function saveinCartDB(method,data,url) {
+    //save this data in my cart , ie in local db
+    let req = await fetch(url, {
+      method: method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    let res = await req.json();
+    console.log(res);
   }
 
 }
+
 
