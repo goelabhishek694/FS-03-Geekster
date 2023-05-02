@@ -13,15 +13,15 @@ body{
     height: 100vh;
 }
 header{
-    height: 10vh;
-    background-color: var(---mssg);
+    height: 8vh;
+    background-color: var(--my-mssg);
     color:var(--text-white);
     display: flex;
     align-items: center;
     padding:0px 15px;
 }
 .left{
-    width:40%;
+    width:32%;
     height:100%;
     overflow:hidden;
     /* scroll */
@@ -38,6 +38,116 @@ header{
 #dropdown-menu-button{
     background-color: var(--my-mssg);
     border:none;
-    /* margin:0;
-    padding:0; */
+    margin:0;
+    padding:0;
 }
+
+/* right side styling */
+.right{
+    width:68%;
+    height: 100vh;
+}
+
+.right>header{
+    position: sticky;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    /* z-index: 10 */
+}
+
+.chat-box{
+    height: 72vh;
+}
+
+.current-user{
+    width:100%;
+    height:12vh;
+    border-bottom: 1px solid var(--border);
+
+}
+
+.current-user-sub{
+    height: 80px;
+    width:90%;
+    display: flex;
+    align-items: center;
+}
+
+.current-avatar{
+    width: 20%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-avatar>span{
+    height: 70px;
+    width: 70px;
+    position: relative;
+}
+
+span>img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.online{
+    height:10px;
+    width:10px;
+    background-color: var(--online);
+    border-radius: 50%;
+    position: absolute;
+    bottom:6px;
+    left:57px;
+}
+
+.chat{
+    height:58vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-image: var(--background-img);
+    /* background-size:cover */
+    /* z-index: -1; */
+    background-color: var(--text-white);
+    position: sticky;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-info{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.current-title{
+    font-size: 18px;
+}
+
+.current-highlights{
+    font-size: 14px;
+    color:var(--text-dark);
+}
+
+.user1-container{
+    display: flex;
+    align-items: center;
+}
+
+.user1-msg{
+    max-width:70%;
+    color: var(--text-dark);
+    background-color: var(--selected-chat);
+    font-size: 13px;
+    border-radius: 10px 10px 10px 0px;
+    padding: 16px;
+    margin: 2% 2%;
+}
+
