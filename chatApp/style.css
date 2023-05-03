@@ -51,6 +51,10 @@ header{
     align-items: center;
 }
 
+.active{
+    background-color: var(--selected-chat);
+}
+
 .user-list-sub{
     height: 75px;
     width: 100%;

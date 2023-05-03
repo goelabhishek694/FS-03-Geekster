@@ -83,9 +83,9 @@ const usersData = [
   },
 ];
 
-// Json data ...........................................
-const JsonData = {
-  chat1: [
+// chat data ...........................................
+const chatData = {
+  "John Mayers": [
     {
       from: {
         type: "user1",
@@ -121,7 +121,7 @@ const JsonData = {
       },
     },
   ],
-  chat2: [
+  "Tony Stark": [
     {
       from: {
         type: "user1",
