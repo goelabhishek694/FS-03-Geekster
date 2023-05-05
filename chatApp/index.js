@@ -81,13 +81,14 @@ function updateChat(chat) {
     chatData.classList.add("chat");
     // document.querySelector('.chat-box').children[1].innerHTML = ``;
     if (chat) {
-        chat.forEach((msgObj,idx) => {
+        chat.forEach((msgObj, idx) => {
+            let userNum = msgObj.from.type;
             let divEle = document.createElement('div');
-            let divClassName = `user${(idx%2)+1}-container`;
+            let divClassName = `${userNum}-container`;
             divEle.classList.add(divClassName);
 
             let pEle = document.createElement('p');
-            let pClassName = `user${(idx % 2) + 1}-msg`;
+            let pClassName = `${userNum}-msg`;
             pEle.classList.add(pClassName);
             pEle.innerText = msgObj.msg.message;
 
@@ -98,6 +99,51 @@ function updateChat(chat) {
     }
     document.querySelector(".chat-box").appendChild(chatData);
 }
+
+//auto adjusting of screen size
+//change theme
+//change background
+//count char and words 
+// search user 
+function searchUser(e) {
+    let allUsers = document.querySelector(".all-users");
+    allUsers.innerHTML = '';
+    let input = e.target.value;
+    console.log(input);
+    const newList = usersData.filter(user => user.name.toLowerCase().includes(input.toLowerCase()));
+    console.log(newList);
+    if (newList.length == 0) {
+        allUsers.innerHTML='No User Found'
+    }
+    setUserList(newList);
+}
+//send msg 
+function sendMsg(e) {
+    let msgEle = document.querySelector(".input-msg");
+    let msg = msgEle.value;
+    console.log(msg);
+    //we will always be user2
+    const name = msgEle.parentElement.parentElement.parentElement.children[1].children[0].children[0].children[1].children[0].innerText;
+    console.log(name);
+    const newMsg = {
+        from: {
+            type:'user2'
+        },
+        msg: {
+            message:msg
+        }
+    }
+    if (chatData[name]) {
+        chatData[name] = [...chatData[name], newMsg];
+    }
+    else chatData[name] = [newMsg];
+
+    console.log(chatData[name]);
+    document.querySelector(".chat").remove();
+    updateChat(chatData[name]);
+    msgEle.value = '';
+}
+
 
 
 

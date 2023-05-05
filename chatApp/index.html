@@ -21,7 +21,7 @@
                     <button>Menu</button>
                     <div id="dropdown-menu-button">
                         <div>
-                            <input type="text" placeholder="Search User">
+                            <input type="text" placeholder="Search User" class="search-user" oninput="searchUser(event)">
                         </div>
                         <div>
                             <select name="" id="">
@@ -107,8 +107,8 @@
             <div class="message-box">
                 <span class="count-char">Current characters:0 and current words:0</span>
                 <div class="text-box">
-                    <input type="text" placeholder="Type your message here...." class="inpuMsg" />
-                    <div class="send-btn-div"><button class="send-btn">Send</button></div>
+                    <input type="text" placeholder="Type your message here...." class="input-msg" />
+                    <div class="send-btn-div"><button class="send-btn" onclick="sendMsg(event)">Send</button></div>
                 </div>
             </div>
         </div>
