@@ -24,25 +24,25 @@
                             <input type="text" placeholder="Search User" class="search-user" oninput="searchUser(event)">
                         </div>
                         <div>
-                            <select name="" id="">
-                                <option value="">Change Theme </option>
-                                <option value="">black</option>
-                                <option value="">red</option>
-                                <option value="">blue</option>
-                                <option value="">green</option>
-                                <option value="">grey</option>
-                                <option value="">plum</option>
-                                <option value="">navy</option>
-                                <option value="">pink</option>
-                                <option value="">purple</option>
+                            <select onchange="selectTheme(event)">
+                                <option value="Original Theme">Original Theme </option>
+                                <option value="black">black</option>
+                                <option value="red">red</option>
+                                <option value="#6BD1F3">blue</option>
+                                <option >green</option>
+                                <option value="grey">grey</option>
+                                <option value="plum">plum</option>
+                                <option value="navy">navy</option>
+                                <option value="pink">pink</option>
+                                <option value="purple">purple</option>
                             </select>
                         </div>
                         <div>
-                            <select name="" id="">
-                                <option value="">Change Background</option>
-                                <option value="">Image1</option>
-                                <option value="">Image2</option>
-                                <option value="">Image3</option>
+                            <select onchange="changeBackground(event)">
+                                <option>Original Background</option>
+                                <option>Image1</option>
+                                <option>Image2</option>
+                                <option>Image3</option>
                             </select>
                         </div>
                     </div>
@@ -68,6 +68,7 @@
             <header>
                 <h3>Chat Section</h3>
                 <div><i class="bi bi-x"></i></div>
+                <div onclick="goLeft()"><i class="bi bi-backspace"></i></div>
             </header>
             <div class="chat-box">
                 <div class="current-user">
@@ -107,7 +108,7 @@
             <div class="message-box">
                 <span class="count-char">Current characters:0 and current words:0</span>
                 <div class="text-box">
-                    <input type="text" placeholder="Type your message here...." class="input-msg" />
+                    <input type="text" placeholder="Type your message here...." class="input-msg" oninput="charWordCount(this)"/>
                     <div class="send-btn-div"><button class="send-btn" onclick="sendMsg(event)">Send</button></div>
                 </div>
             </div>

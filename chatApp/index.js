@@ -101,9 +101,86 @@ function updateChat(chat) {
 }
 
 //auto adjusting of screen size
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 750) {
+        document.querySelector('.left').style.display = 'block';
+        document.querySelector('.left').style.width = '100%';
+        document.querySelector('.right').style.display = 'none';
+    }
+    else if (window.innerWidth > 750) {
+        document.querySelector(".left").style.display = "block";
+        document.querySelector(".left").style.width = "32%";
+      document.querySelector(".right").style.display = "block";
+      document.querySelector(".right").style.width = "68%";
+    }
+})
+
+function goLeft() {
+    document.querySelector(".left").style.display = "block";
+    document.querySelector(".left").style.width = "100%";
+    document.querySelector(".right").style.display = "none";
+}
 //change theme
+function selectTheme(e) {
+    const root = document.querySelector(":root");
+    let color = e.target.value || e.target.innerText;
+    if (color == "Original Theme") {
+        root.style.setProperty("--my-mssg", "#00A0AE");
+    }
+    else root.style.setProperty("--my-mssg", color);
+    console.log(root);
+    console.log(color);
+}
 //change background
+function changeBackground(e) {
+    const bgType = e.target.value;
+    let chat = document.querySelector('.chat');
+    switch (bgType) {
+      case "Original Background":
+        chat.style.setProperty(
+          "--background-img",
+          'url("https://i.pinimg.com/originals/f5/05/24/f50524ee5f161f437400aaf215c9e12f.jpg")'
+        );
+        break;
+      case "Image1":
+        chat.style.setProperty(
+          "--background-img",
+          'url("https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg")'
+        );
+        break;
+      case "Image2":
+        chat.style.setProperty(
+          "--background-img",
+          'url("https://wallpaperaccess.com/full/1288076.jpg")'
+        );
+        break;
+      case "Image3":
+        chat.style.setProperty(
+          "--background-img",
+          'url("https://i.pinimg.com/736x/78/1e/21/781e212cb0a891c6d8a3738c525e235d.jpg")'
+        );
+        break;
+    }
+}
 //count char and words 
+function charWordCount(inputBox, isMsgSent) {
+    if (isMsgSent) {
+        document.querySelector(
+          ".count-char"
+        ).innerText = `Current characters:${0} and current words:${0}`;
+    }
+    console.log(inputBox);
+    let numOfChar = inputBox.value.length;
+    let numOfWords = inputBox.value.split(' ').length;
+    //traverse and delete extra spcaes from end. and remove consecutive spaces if found. alternatively use trim 
+    console.log(numOfChar);
+    console.log(numOfWords);
+    if (numOfChar) {
+        document.querySelector(
+          ".count-char"
+        ).innerText = `Current characters:${numOfChar} and current words:${numOfWords}`;
+    }
+}
 // search user 
 function searchUser(e) {
     let allUsers = document.querySelector(".all-users");
@@ -142,9 +219,7 @@ function sendMsg(e) {
     document.querySelector(".chat").remove();
     updateChat(chatData[name]);
     msgEle.value = '';
+    charWordCount(msgEle, "sent");
 }
-
-
-
 
 
